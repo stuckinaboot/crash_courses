@@ -1,6 +1,6 @@
 # React Crash Course
 
-Note: _My team found this to be a great React primer and so I decided to open source it. If you have suggestions, feel free to submit a PR_
+Note: _My team found this to be a great React primer and so I decided to open source it. If you have suggestions, feel free to submit a PR :)_
 
 React is a framework for building web frontends. While there can be a learning curve to react, this crash course is designed to alleviate that learning curve. My first recommendation is to download the [VS Code](https://code.visualstudio.com/) as it is **extremely** helpful in creating React components and debugging issues related to React components. You are doing yourself a disservice if you do not write React code using [VS Code](https://code.visualstudio.com/). Also, in all of the examples, there are comments for clarity but the react commenting style is a bit different so remove these if you copy-paste.
 
