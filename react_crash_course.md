@@ -1,6 +1,6 @@
-React is a framework for building web frontends. While there can be a learning curve to react, this crash course is designed to alleviate that learning curve. My first recommendation is to download the [VS Code](https://code.visualstudio.com/) as it is **extremely** helpful in creating React components and debugging issues related to React components. You are doing yourself a disservice if you do not write React code using [VS Code](https://code.visualstudio.com/). Also, in all of the examples, there are comments for clarity but the react commenting style is a bit different so remove these if you copy-paste.
+# React Crash Course
 
-**Ask Aspyn if you have questions at any point. There is no dumb question.**
+React is a framework for building web frontends. While there can be a learning curve to react, this crash course is designed to alleviate that learning curve. My first recommendation is to download the [VS Code](https://code.visualstudio.com/) as it is **extremely** helpful in creating React components and debugging issues related to React components. You are doing yourself a disservice if you do not write React code using [VS Code](https://code.visualstudio.com/). Also, in all of the examples, there are comments for clarity but the react commenting style is a bit different so remove these if you copy-paste.
 
 ## Key Concepts
 
