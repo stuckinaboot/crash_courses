@@ -161,7 +161,10 @@ Here is a simple example of how state can be used
 ```
 export default function MyContentsComponent() {
   const [contents, setContents] = useState("");
-  setContents("contents will now equal this string");
+  
+  if (contents.length === 0) {
+    setContents("contents will now equal this string");
+  }
 
   return <div>{contents}</div>;
 }
