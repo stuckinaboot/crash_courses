@@ -162,7 +162,7 @@ Here is a simple example of how state can be used
 export default function MyContentsComponent() {
   const [contents, setContents] = useState("");
   
-  if (contents.length === 0) {
+  if (contents === "") {
     setContents("contents will now equal this string");
   }
 
