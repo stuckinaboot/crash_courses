@@ -15,7 +15,7 @@ The key concepts in React are components, properties (props), and state.
 **State**: An object that represents parts of a component that can change. For example, if a component has a button, then you could have a counter (which is state) that increments each time the button is pressed.
 
 Here is a simple example component, implemented using a function. Note the `export default` which is used to export the component from the file (to be the component available to other files):
-```
+```jsx
 // This is a react component
 export default function InfoCard() {
 
@@ -41,7 +41,7 @@ export default function InfoCard() {
 
 We could use our InfoCard component in the example above in some other react component. For example, we can have a component BigCard, that contains our InfoCard:
 
-```
+```jsx
 export default function BigCard() {
   return (
     <div>
@@ -57,7 +57,7 @@ export default function BigCard() {
 
 Typically, you'll want to include some dynamic values in the component. To do this, we place any typescript that we want to evaluate within { ... }. For example, if you have a variable `foo` and you want to represent the value of `foo` in a react element, you would write `{foo}`. Here we pass properties as input to the component so that we can render them as part of the component.
 
-```
+```jsx
 export default function InfoCard(props: { name: string; description: string }) {
   return (
     <Card>
@@ -79,7 +79,7 @@ export default function InfoCard(props: { name: string; description: string }) {
 ### Rendering arrays in components
 
 In order to render an array in a react component, you need to map each element in that array to react component.
-```
+```jsx
 export default function InfoCard(props: { names: string[]; }) {
   // props.names.map maps each name (string) in props.names to a react element
   return (
@@ -107,7 +107,7 @@ The `useEffect` handler (first argument) is called automatically when the react 
 
 #### useEffect will only be called once
 
-```
+```jsx
 export default function MyReactComponent() {
   useEffect(() => {
     console.log("Woohoo!");
@@ -121,7 +121,7 @@ export default function MyReactComponent() {
 
 If the variable that is passed into MyReactComponent changes in value, then the handler to useEffect (the first argument to useEffect) will be called again. This is useful as this allows the parent component (e.g. a component that contains <MyReactComponent />) to update the state of its children when one of its own variables changes.
 
-```
+```jsx
 export default function MyReactComponent(props: { foo : boolean }) {
   useEffect(() => {
     console.log("Woohoo!");
@@ -135,7 +135,7 @@ export default function MyReactComponent(props: { foo : boolean }) {
 
 Often you'll want to perform some async function when the component is first loaded, such as requesting data from the SixFeetAway server. To do this, you create an async function and call that function from the useEffect handler.
 
-```
+```jsx
 export default function MyReactComponent(props: { foo : boolean }) {
 
   useEffect(() => {
@@ -158,7 +158,7 @@ Here is a simple example of how state can be used
 
 #### State on its own
 
-```
+```jsx
 export default function MyContentsComponent() {
   const [contents, setContents] = useState("");
   
@@ -174,7 +174,7 @@ export default function MyContentsComponent() {
 
 You will typically want to alter state when some action occurs, such as a component being loaded. Here is an example of how you would set state after performing a request and then using that state in the react component.
 
-```
+```jsx
 export default function MyContentsComponent() {
   const [contents, setContents] = useState("");
 
@@ -199,7 +199,7 @@ export default function MyContentsComponent() {
 #### Passing values into children
 
 `MyParentComponent.tsx`:
-```
+```jsx
 export default function MyParentComponent(props: { accountId: string }) {
   // Note how we evaluate the variable props.accountId by placing it in { ... } in order to pass it into MyChildComponent
   return (
@@ -211,7 +211,7 @@ export default function MyParentComponent(props: { accountId: string }) {
 ```
 
 `MyChildComponent.tsx`:
-```
+```jsx
 export default function MyChildComponent(props: { name: string; accountId: string }) {
   // Display the input name and accountId with a space between them
   return (
@@ -227,7 +227,7 @@ export default function MyChildComponent(props: { name: string; accountId: strin
 Sometimes you will want the parent component to be notified when certain events happen in the child component. An example of this would be notifying the parent component when a button was pressed in the child component. Here is an example of how this could be accomplished by passing a callback function from the parent to the child through properties.
 
 `MyParentComponent.tsx`:
-```
+```jsx
 export default function MyParentComponent(props: { accountId: string }) {
   function printWoohoo() {
     console.log("Woohoo!");
@@ -243,7 +243,7 @@ export default function MyParentComponent(props: { accountId: string }) {
 ```
 
 `MyChildComponent.tsx`:
-```
+```jsx
 export default function MyChildComponent(props: { onButtonPress: (event: any) => any }) {
   // When the button is pressed, the input function props.onButtonPress, which is in the parent component, will be called
   return (
