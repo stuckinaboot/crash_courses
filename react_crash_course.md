@@ -222,16 +222,16 @@ export default function MyChildComponent(props: { name: string; accountId: strin
 }
 ```
 
-#### Passing callbacks into children
+#### Passing callbacks into children with useCallback hook
 
-Sometimes you will want the parent component to be notified when certain events happen in the child component. An example of this would be notifying the parent component when a button was pressed in the child component. Here is an example of how this could be accomplished by passing a callback function from the parent to the child through properties.
+Sometimes you will want the parent component to be notified when certain events happen in the child component. An example of this would be notifying the parent component when a button was pressed in the child component. Here is an example of how this could be accomplished by passing a callback function from the parent to the child through properties with the `useCallback` hook.
 
 `MyParentComponent.tsx`:
 ```jsx
 export default function MyParentComponent(props: { accountId: string }) {
-  function printWoohoo() {
+  const printWoohoo = useCallback((event) => {
     console.log("Woohoo!");
-  }
+  }, [])
 
   // Note how the function printWoohoo needs to be placed in { ... } in order to be passed into MyChildComponent
   return (
